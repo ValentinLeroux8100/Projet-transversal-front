@@ -1,0 +1,29 @@
+.panier{
+  position: relative;
+  width: fit-content;
+
+  img{
+    height: 1.5em;
+  }
+
+  span{
+    position: absolute;
+    display: inline-block;
+    
+    top: 0;
+    right: 0;
+    translate: 50%;
+    
+    border-radius: 100%;
+    
+    padding: 0.1em;
+    width: 1.2em;
+    height: 1.2em;
+    background: red;
+    
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 60%;
+  }
+}

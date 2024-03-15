@@ -1,0 +1,17 @@
+.logo{
+  color: var(--primary);
+  font-family: "Orelega One";
+  font-size: 2em;
+}
+
+.links{
+  li{
+    color: var(--primary);
+    list-style-type: '- ';
+  
+    a{
+      color: var(--primary);
+      text-decoration: none;
+    }
+  }
+}

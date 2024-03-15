@@ -1,0 +1,11 @@
+{
+  "extends": "@tsconfig/create-react-app/tsconfig.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "baseUrl": "./src",
+    "checkJs": true,
+    "jsx": "react",
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src", "custom.d.ts"]
+}
