@@ -1,0 +1,19 @@
+.inputContainer{
+  width: 100%;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  padding: 0.4em;
+  background-color: var(--background);
+  display: grid;
+  grid-template-columns: auto min-content;
+  gap: 0.4em; 
+
+  &> input{
+    border: none;
+    width: 100%;
+  }
+
+  &> .logo{
+    height: 1.2em;
+  }
+}

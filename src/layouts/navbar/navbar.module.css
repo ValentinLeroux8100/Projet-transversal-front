@@ -1,0 +1,20 @@
+.left-side{
+  display: flex;
+  gap: 1em;
+  
+  img{
+    height: 1.1em;
+  }
+}
+
+.right-side{
+  display: flex;
+  justify-content: end;
+}
+
+.logo{
+  color: var(--primary);
+  font-family: "Orelega One";
+  font-weight: bold;
+  font-size: 1.4em;  
+}
