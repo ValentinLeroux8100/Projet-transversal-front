@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orelega+One&display=swap');
+
+@layer components{
+  .carte-produit{
+    @apply size-full;
+
+    img{
+      @apply w-full mb-4 object-center object-cover aspect-square rounded-xl shadow-lg;
+    }
+  }
+
+  .description{
+    @apply flex justify-between gap-4 px-4 ;
+
+    h2{
+      @apply text-stone-900 text-2xl font-bold leading-none;
+    }
+
+    span {
+      @apply bg-lime-200 text-xl rounded-full px-4 py-2 h-fit;
+    }
+  }
+}
