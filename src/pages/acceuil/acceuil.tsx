@@ -7,9 +7,18 @@ export default function Acceuil() {
     <main className="flex flex-col gap-8 py-8 px-12">
       <section className="flex flex-col gap-8 ">
         <div className="flex flex-row flex-wrap place-content-evenly gap-4 p-4">
-          <CarteCategorie></CarteCategorie>
-          <CarteCategorie></CarteCategorie>
-          <CarteCategorie></CarteCategorie>
+          <CarteCategorie
+            image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+            nom="test"
+          ></CarteCategorie>
+          <CarteCategorie
+            image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+            nom="test"
+          ></CarteCategorie>
+          <CarteCategorie
+            image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+            nom="test"
+          ></CarteCategorie>
         </div>
       </section>
       <section className="flex flex-col gap-8">
@@ -17,10 +26,30 @@ export default function Acceuil() {
           Les Highlanders du moment
         </h2>
         <div className="flex flex-row flex-wrap   place-content-around gap-4 p-4">
-          <CarteProduit></CarteProduit>
-          <CarteProduit></CarteProduit>
-          <CarteProduit></CarteProduit>
-          <CarteProduit></CarteProduit>
+          <CarteProduit
+            nom="Commode"
+            description="pas très commode"
+            prix="100"
+            image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+          ></CarteProduit>
+          <CarteProduit
+            nom="Commode"
+            description="pas très commode"
+            prix="100"
+            image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+          ></CarteProduit>
+          <CarteProduit
+            nom="Commode"
+            description="pas très commode"
+            prix="100"
+            image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+          ></CarteProduit>
+          <CarteProduit
+            nom="Commode"
+            description="pas très commode"
+            prix="100"
+            image="https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
+          ></CarteProduit>
         </div>
       </section>
     </main>

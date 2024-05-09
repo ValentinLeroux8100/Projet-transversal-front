@@ -1,13 +1,17 @@
 import React from "react";
 import styles from "./carteCategorie.module.css";
-import meubleImage from "assets/images/mocks/meuble.jpg";
 
-export default function CarteCategorie() {
+interface CarteCategorieProps {
+  nom: string;
+  image: string;
+}
+
+export default function CarteCategorie(props: CarteCategorieProps) {
   return (
     <div className={styles["carte-categorie"]}>
-      <img src={meubleImage} alt="" />
+      <img src={props.image} alt="" />
       <div className={styles["description"]}>
-        <h2>Salon</h2>
+        <h2>{props.nom}</h2>
       </div>
     </div>
   );

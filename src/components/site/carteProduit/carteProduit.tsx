@@ -2,16 +2,23 @@ import React from "react";
 import styles from "./carteProduit.module.css";
 import meubleImage from "assets/images/mocks/meuble.jpg";
 
-export default function CarteProduit() {
+interface CarteProduitProps {
+  nom: string;
+  description?: string;
+  prix: string;
+  image: string;
+}
+
+export default function CarteProduit(props: CarteProduitProps) {
   return (
     <div className={styles["carte-produit"]}>
-      <img src={meubleImage} alt="" />
+      <img src={props.image} alt={props.nom} />
       <div className={styles["description"]}>
         <div>
-          <h2>IKEA</h2>
-          <h3>Commode pas très commode</h3>
+          <h2>{props.nom}</h2>
+          <h3>{props.description}</h3>
         </div>
-        <span>103€</span>
+        <span>{props.prix}€</span>
       </div>
     </div>
   );
