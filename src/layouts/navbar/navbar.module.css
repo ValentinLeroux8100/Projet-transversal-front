@@ -1,20 +1,23 @@
-.left-side{
-  display: flex;
-  gap: 1em;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.left-side > img {
-  height: 1.1em;
-}
+@layer components {
+  .left-side{
+    @apply flex gap-4 w-max; 
+  }
 
-.right-side{
-  display: flex;
-  justify-content: end;
-}
+  .left-side > img {
+    height: 1.1em;
+  }
 
-.logo{
-  color: var(--primary);
-  font-family: "Orelega One";
-  font-weight: bold;
-  font-size: 1.4em;  
+  .right-side{ 
+    @apply flex justify-end w-max;
+  }
+
+  .logo{
+    @apply font-bold text-2xl hidden md:block;
+    color: var(--primary);
+    font-family: "Orelega One";
+  }
 }

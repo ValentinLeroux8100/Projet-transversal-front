@@ -4,14 +4,14 @@
 
 @layer components{
   .carte-categorie{
-    @apply size-full;
+    @apply flex flex-col w-full md:w-[30%] h-[100%];
   }
 
-  .carte-categorie > img {
-    @apply w-full mb-4 object-center object-cover aspect-[9/6] rounded-xl shadow-lg;
+  .carte-categorie img {
+    @apply size-full mb-4 object-center object-cover rounded-xl shadow-lg;
   }
   
   .carte-categorie h2 {
-    @apply font-semibold text-xl capitalize text-center
+    @apply font-semibold text-3xl md:text-2xl capitalize text-center
   }
 }

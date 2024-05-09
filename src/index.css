@@ -25,9 +25,11 @@ nav {
   position: sticky;
   top: 0;
 
+  width: 100vw;
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: min-content minmax(70%, max-content) min-content;
   align-items: center;
+  gap: 40px;
   justify-content: space-between;
   
   font-size: 1.2em;
