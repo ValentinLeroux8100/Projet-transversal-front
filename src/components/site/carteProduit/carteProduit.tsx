@@ -5,7 +5,7 @@ import meubleImage from "assets/images/mocks/meuble.jpg";
 interface CarteProduitProps {
   nom: string;
   description?: string;
-  prix: string;
+  prix: number;
   image: string;
 }
 
