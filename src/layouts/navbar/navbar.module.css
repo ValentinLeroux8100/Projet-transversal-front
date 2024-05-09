@@ -1,10 +1,10 @@
 .left-side{
   display: flex;
   gap: 1em;
-  
-  img{
-    height: 1.1em;
-  }
+}
+
+.left-side > img {
+  height: 1.1em;
 }
 
 .right-side{

@@ -4,14 +4,12 @@
   font-size: 2em;
 }
 
-.links{
-  li{
+.links > li{
     color: var(--primary);
     list-style-type: '- ';
-  
-    a{
-      color: var(--primary);
-      text-decoration: none;
-    }
-  }
+}
+
+.links > li > a {
+  color: var(--primary);
+  text-decoration: none;
 }

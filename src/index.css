@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orelega+One&display=swap');
+
 @layer base{
   *{
     @apply font-body p-0 m-0;
@@ -33,11 +35,11 @@ nav {
   padding: 6px 1.5em 6px 1em;
 
   background-color: var(--secondary);
+}
 
-  & > * {
-    display: flex;
-    align-items: center;
-  }
+nav > * {
+  display: flex;
+  align-items: center;
 }
 
 footer{
@@ -47,6 +49,5 @@ footer{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
   padding: 1.5em 6em 1.5em 4em;
 }
