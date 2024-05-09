@@ -20,6 +20,12 @@
   }
 }
 
+#root{
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  min-height: 100vh;
+}
+
 
 nav {
   position: sticky;
@@ -42,14 +48,4 @@ nav {
 nav > * {
   display: flex;
   align-items: center;
-}
-
-footer{
-  background-color: var(--secondary);
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5em 6em 1.5em 4em;
 }

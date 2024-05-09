@@ -4,22 +4,22 @@
 
 @layer components{
   .carte-produit{
-    @apply h-full w-full md:w-[20%];
+    @apply h-72 w-full md:w-2/5 lg:w-1/5  flex flex-col gap-2;
   }
 
   .carte-produit > img {
-    @apply w-full h-4/5 mb-4 object-center object-cover rounded-xl shadow-lg;
+    @apply w-full h-full rounded-lg object-center object-cover border-0;
   }
 
   .description{
-    @apply flex justify-between gap-4 px-4 ;
+    @apply flex place-content-between px-2; 
   }
 
   .description h2 {
-    @apply text-stone-900 text-2xl font-bold leading-none;
+    @apply font-bold;
   }
 
   .description span {
-    @apply bg-lime-200 text-xl rounded-full px-4 py-2 h-fit;
+    @apply py-2 px-3 h-fit rounded-full bg-valid;
   }
 }

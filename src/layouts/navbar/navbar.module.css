@@ -16,8 +16,6 @@
   }
 
   .logo{
-    @apply font-bold text-2xl hidden md:block;
-    color: var(--primary);
-    font-family: "Orelega One";
+    @apply font-bold text-4xl hidden md:block font-logo text-primary;
   }
 }
