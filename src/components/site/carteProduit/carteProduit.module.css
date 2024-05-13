@@ -4,7 +4,7 @@
 
 @layer components{
   .carte-produit{
-    @apply h-72 w-full md:w-2/5 lg:w-1/5  flex flex-col gap-2;
+    @apply h-64 w-full sm:w-2/5 lg:w-1/5 flex flex-col gap-2;
   }
 
   .carte-produit > img {

@@ -1,8 +1,6 @@
 import React from "react";
 import CarteProduit from "components/site/carteProduit/carteProduit";
 import CarteCategorie from "components/site/carteCategorie/carteCategorie";
-import Categorie from "services/types/categorie";
-import Produit from "services/types/produit";
 import acceuilFixtureData from "fixture/acceuilFixture";
 
 export default function Acceuil() {
@@ -23,19 +21,12 @@ export default function Acceuil() {
         </div>
       </section>
       <section className="flex flex-col gap-8">
-        <h2 className="text-center text-black text-5xl font-semibold font-body capitalize">
+        <h2 className="text-center text-black text-3xl font-semibold font-body capitalize">
           Les Highlanders du moment
         </h2>
-        <div className="flex flex-row flex-wrap   place-content-around gap-4 p-4">
+        <div className="flex flex-row flex-wrap place-content-around gap-4 p-4">
           {data.produits.map((produit) => {
-            return (
-              <CarteProduit
-                nom={produit.nom}
-                description={produit.description}
-                prix={produit.prix}
-                image={produit.image}
-              ></CarteProduit>
-            );
+            return <CarteProduit produit={produit}></CarteProduit>;
           })}
         </div>
       </section>

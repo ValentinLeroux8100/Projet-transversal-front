@@ -4,7 +4,7 @@
 
 @layer components {
   .inputContainer{
-    @apply flex flex-row w-full border-2 border-primary rounded-lg bg-background p-1.5 gap-1.5;
+    @apply flex flex-row w-full border-2 border-primary rounded-lg bg-background py-1.5 px-2.5 gap-1.5;
   }
 
   .inputContainer input {

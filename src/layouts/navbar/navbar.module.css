@@ -16,6 +16,6 @@
   }
 
   .logo{
-    @apply font-bold text-4xl hidden md:block font-logo text-primary;
+    @apply font-bold text-4xl hidden lg:block font-logo text-primary;
   }
 }

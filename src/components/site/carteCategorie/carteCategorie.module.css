@@ -12,6 +12,6 @@
   }
   
   .carte-categorie h2 {
-    @apply text-2xl text-center font-bold;
+    @apply text-xl text-center font-bold;
   }
 }
