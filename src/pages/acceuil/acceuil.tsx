@@ -1,6 +1,6 @@
 import React from "react";
-import ListeProduits from "components/site/listeProduits/ListeProduits";
-import ListeCategories from "components/site/listeCategories/listeCategories";
+import ListeProduits from "components/site/produit/listeProduits/ListeProduits";
+import ListeCategories from "components/site/categorie/listeCategories/listeCategories";
 import acceuilFixtureData from "fixture/acceuilFixture";
 
 export default function Acceuil() {

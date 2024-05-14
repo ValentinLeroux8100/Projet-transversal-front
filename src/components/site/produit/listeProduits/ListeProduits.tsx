@@ -1,6 +1,6 @@
 import React from "react";
 import Produit from "services/types/produit";
-import CarteProduit from "components/site/carteProduit/carteProduit";
+import CarteProduit from "components/site/produit/carteProduit/carteProduit";
 
 interface ListeProduitsProps {
   produits: Produit[];

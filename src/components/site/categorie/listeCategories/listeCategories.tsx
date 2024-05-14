@@ -1,6 +1,6 @@
 import React from "react";
 import Categorie from "services/types/categorie";
-import CarteCategorie from "components/site/carteCategorie/carteCategorie";
+import CarteCategorie from "components/site/categorie/carteCategorie/carteCategorie";
 
 interface ListeCategoriesProps {
   categories: Categorie[];

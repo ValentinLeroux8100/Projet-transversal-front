@@ -1,6 +1,6 @@
 import React from "react";
-import ListeProduits from "components/site/listeProduits/ListeProduits";
-import DescriptionProduit from "components/site/descriptionProduit/descriptionProduit";
+import ListeProduits from "components/site/produit/listeProduits/ListeProduits";
+import DescriptionProduit from "components/site/produit/descriptionProduit/descriptionProduit";
 import produitFixtureData from "fixture/produitFixture";
 import UiAirneisButton from "components/ui/form/button/button";
 

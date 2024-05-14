@@ -1,14 +1,13 @@
 import "App.css";
 import React from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Acceuil from "pages/acceuil/acceuil";
 import Navbar from "layouts/navbar/navbar";
 import Footer from "layouts/footer/footer";
+
+import Acceuil from "pages/acceuil/acceuil";
 import Produit from "pages/produit/produit";
+import Categorie from "pages/categorie/categorie";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "produits/:produitId",
     element: <Produit />,
+  },
+  {
+    path: "categories/:categoriesName",
+    element: <Categorie />,
   },
 ]);
 
