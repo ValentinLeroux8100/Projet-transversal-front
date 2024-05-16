@@ -2,41 +2,42 @@ import "App.css";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Navbar from "layouts/navbar/navbar";
-import Footer from "layouts/footer/footer";
-
+import Layout from "layouts/layout";
 import Acceuil from "pages/acceuil/acceuil";
 import Produit from "pages/produit/produit";
 import Categorie from "pages/categorie/categorie";
+import Panier from "pages/panier/panier";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Acceuil />,
-  },
-  {
-    path: "produits/:produitId",
-    element: <Produit />,
-  },
-  {
-    path: "categories/:categoriesName",
-    element: <Categorie />,
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Acceuil />,
+      },
+      {
+        path: "produits/:produitId",
+        element: <Produit />,
+      },
+      {
+        path: "categories/:categoriesName",
+        element: <Categorie />,
+      },
+      {
+        path: "panier",
+        element: <Panier />,
+      },
+    ],
   },
 ]);
 
 function App() {
   return (
-    <>
-      <Navbar></Navbar>
-
-      <div className="App">
-        <React.StrictMode>
-          <RouterProvider router={router} />
-        </React.StrictMode>
-      </div>
-
-      <Footer></Footer>
-    </>
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>
   );
 }
 

@@ -7,14 +7,14 @@ export default function Acceuil() {
   const { produits, categories } = acceuilFixtureData;
 
   return (
-    <main className="flex flex-col gap-8 py-8 px-12">
-      <section className="flex flex-col gap-8 ">
+    <>
+      <section>
         <ListeCategories categories={categories}></ListeCategories>
       </section>
-      <section className="flex flex-col gap-8">
+      <section>
         <h2 className="titre-section">Les Highlanders du moment</h2>
         <ListeProduits produits={produits}></ListeProduits>
       </section>
-    </main>
+    </>
   );
 }

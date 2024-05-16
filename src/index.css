@@ -18,6 +18,14 @@
   li {
     @apply list-none;
   }
+
+  section{
+    @apply flex flex-col gap-8;
+  }
+
+  main{
+    @apply flex flex-col gap-8 py-8 px-12;
+  }
 }
 
 #root{
