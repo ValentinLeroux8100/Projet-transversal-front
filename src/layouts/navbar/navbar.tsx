@@ -20,9 +20,10 @@ export default function Navbar() {
         </Link>
       </div>
       <div>
-        <UiAirneisInputText icon={iconeRecherche}>
-          Rechercher un produit
-        </UiAirneisInputText>
+        <UiAirneisInputText
+          placeholder="Rechercher un produit"
+          icon={iconeRecherche}
+        ></UiAirneisInputText>
       </div>
       <div className="flex justify-end w-max">
         <IconePanier nombreObjetsPanier={2}></IconePanier>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  footer { @apply w-full bg-secondary flex flex-row justify-between items-center px-6 py-12; }
+  footer { @apply w-full bg-secondary flex flex-row justify-between items-center px-6 py-6; }
 
   .logo{ @apply text-primary text-2xl font-logo; }
 

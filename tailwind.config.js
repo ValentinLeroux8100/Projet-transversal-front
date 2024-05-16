@@ -19,6 +19,9 @@ module.exports = {
         text: "#1B1A19",
         secondaryText: "#6f6c6c",
       },
+      gridTemplateRows: {
+        layout: "min-content minmax(90%, auto) min-content",
+      },
     },
   },
   plugins: [],

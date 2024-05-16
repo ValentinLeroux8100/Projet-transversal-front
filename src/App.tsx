@@ -7,6 +7,7 @@ import Acceuil from "pages/acceuil/acceuil";
 import Produit from "pages/produit/produit";
 import Categorie from "pages/categorie/categorie";
 import Panier from "pages/panier/panier";
+import Inscription from "pages/inscription/inscription";
 
 const router = createBrowserRouter([
   {
@@ -29,15 +30,19 @@ const router = createBrowserRouter([
         path: "panier",
         element: <Panier />,
       },
+      {
+        path: "inscription",
+        element: <Inscription />,
+      },
     ],
   },
 ]);
 
 function App() {
   return (
-      <React.StrictMode>
-        <RouterProvider router={router} />
-      </React.StrictMode>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
 }
 
