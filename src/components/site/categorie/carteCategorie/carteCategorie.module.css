@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .carte-categorie {
+    @apply h-64 w-full md:w-1/3 lg:w-1/4 flex flex-col;
+  }
+
+  .carte-categorie img {
+    @apply w-full h-full rounded-lg object-center object-cover border-0;
+  }
+  
+  .carte-categorie h2 {
+    @apply text-xl text-center font-bold;
+  }
+}

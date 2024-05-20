@@ -1,17 +1,13 @@
-.logo{
-  color: var(--primary);
-  font-family: "Orelega One";
-  font-size: 2em;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-.links{
-  li{
-    color: var(--primary);
-    list-style-type: '- ';
-  
-    a{
-      color: var(--primary);
-      text-decoration: none;
-    }
-  }
+@layer components {
+  footer { @apply w-full bg-secondary flex flex-row justify-between items-center px-6 py-6; }
+
+  .logo{ @apply text-primary text-2xl font-logo; }
+
+  .links li{ @apply text-primary list-['-_']; }
+
+  .links li a { @apply text-primary; }
 }

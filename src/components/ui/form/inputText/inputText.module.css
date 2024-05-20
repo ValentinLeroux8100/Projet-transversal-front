@@ -1,19 +1,17 @@
-.inputContainer{
-  width: 100%;
-  border: 2px solid var(--primary);
-  border-radius: 12px;
-  padding: 0.4em;
-  background-color: var(--background);
-  display: grid;
-  grid-template-columns: auto min-content;
-  gap: 0.4em; 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  &> input{
-    border: none;
-    width: 100%;
+@layer components {
+  .inputContainer{
+    @apply flex flex-row w-full border-2 border-primary rounded-lg bg-background py-1.5 px-2.5 gap-1.5;
   }
 
-  &> .logo{
-    height: 1.2em;
+  .inputContainer input {
+    @apply border-0 w-full;
+  }
+
+  .inputContainer .logo {
+    @apply h-full;
   }
 }

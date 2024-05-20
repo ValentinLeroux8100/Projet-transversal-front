@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orelega+One&display=swap');
+
 @layer base{
   *{
     @apply font-body p-0 m-0;
@@ -16,6 +18,20 @@
   li {
     @apply list-none;
   }
+
+  section{
+    @apply flex flex-col gap-8;
+  }
+
+  main{
+    @apply flex flex-col ;
+  }
+}
+
+#root{
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  min-height: 100vh;
 }
 
 
@@ -23,9 +39,11 @@ nav {
   position: sticky;
   top: 0;
 
+  width: 100vw;
   display: grid;
-  grid-template-columns: 25% 50% 25%;
+  grid-template-columns: min-content minmax(70%, max-content) min-content;
   align-items: center;
+  gap: 40px;
   justify-content: space-between;
   
   font-size: 1.2em;
@@ -33,20 +51,9 @@ nav {
   padding: 6px 1.5em 6px 1em;
 
   background-color: var(--secondary);
-
-  & > * {
-    display: flex;
-    align-items: center;
-  }
 }
 
-footer{
-  background-color: var(--secondary);
-  
+nav > * {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-
-  padding: 1.5em 6em 1.5em 4em;
 }

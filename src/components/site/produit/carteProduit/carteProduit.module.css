@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .carte-produit{
+    @apply h-64 w-full sm:w-2/5 lg:w-1/5 flex flex-col gap-2;
+  }
+
+  .carte-produit > img {
+    @apply w-full h-full rounded-lg object-center object-cover border-0;
+  }
+
+  .description{
+    @apply flex place-content-between px-2; 
+  }
+
+  .description h2 {
+    @apply font-bold;
+  }
+
+  .description span {
+    @apply py-2 px-3 h-fit rounded-full bg-valid;
+  }
+}

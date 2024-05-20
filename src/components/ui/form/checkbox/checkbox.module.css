@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .checkbox{
+    @apply size-8 grid place-content-center m-0 rounded-lg border-2 border-primary appearance-none bg-white text-white;
+    transform: translateY(-0.075em);
+  }
+
+  .checkbox::before{
+    @apply size-8 rounded-lg bg-primary grid place-content-center;
+    content: "✓";
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+  }
+
+  .checkbox:checked::before {
+    transform: scale(1);
+  }
+}
