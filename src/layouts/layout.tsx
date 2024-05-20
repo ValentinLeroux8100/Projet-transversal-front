@@ -7,9 +7,7 @@ export default function layout() {
   return (
     <div className="grid grid-rows-layout">
       <Navbar></Navbar>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
       <Footer></Footer>
     </div>
   );

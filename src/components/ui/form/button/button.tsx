@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./button.module.css";
 
 export default function UiAirneisButton({
   icon,
@@ -13,7 +12,7 @@ export default function UiAirneisButton({
   return (
     <button
       className={
-        className +
+        (className ? className : "") +
         " flex flex-row bg-primary p-2 rounded-lg gap-2 hover:bg-primary-700 justify-center"
       }
     >

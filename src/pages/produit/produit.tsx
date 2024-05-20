@@ -8,7 +8,7 @@ export default function Produit() {
   const data = produitFixtureData;
 
   return (
-    <main className="flex flex-col gap-8 py-8 px-12">
+    <main className="gap-8 py-8 px-12">
       <section className="produit-description">
         <div>
           <img

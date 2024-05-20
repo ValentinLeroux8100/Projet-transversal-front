@@ -24,7 +24,7 @@
   }
 
   main{
-    @apply flex flex-col gap-8 py-8 px-12;
+    @apply flex flex-col ;
   }
 }
 

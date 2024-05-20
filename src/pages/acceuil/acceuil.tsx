@@ -7,7 +7,7 @@ export default function Acceuil() {
   const { produits, categories } = acceuilFixtureData;
 
   return (
-    <>
+    <main className="gap-8 py-8 px-12">
       <section>
         <ListeCategories categories={categories}></ListeCategories>
       </section>
@@ -15,6 +15,6 @@ export default function Acceuil() {
         <h2 className="titre-section">Les Highlanders du moment</h2>
         <ListeProduits produits={produits}></ListeProduits>
       </section>
-    </>
+    </main>
   );
 }

@@ -14,6 +14,7 @@ module.exports = {
           700: "#ba995b",
         },
         secondary: "#A58268",
+        thirdy: "#C0A79A",
         background: "#FFFFFF",
         valid: "#BFFFAF",
         text: "#1B1A19",
