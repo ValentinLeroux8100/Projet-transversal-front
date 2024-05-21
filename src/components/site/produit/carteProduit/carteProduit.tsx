@@ -8,11 +8,11 @@ interface CarteProduitProps {
 }
 
 export default function CarteProduit(props: CarteProduitProps) {
-  const { id, image, nom, description, prix } = { ...props.produit };
+  const { id, images, nom, description, prix } = { ...props.produit };
 
   return (
     <Link to={`/produits/${id}`} className={styles["carte-produit"]}>
-      <img src={image} alt={nom} />
+      <img src={images[0].url} alt={images[0].description} />
       <div className={styles["description"]}>
         <div>
           <h2>{nom}</h2>

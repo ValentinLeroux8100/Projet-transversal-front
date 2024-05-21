@@ -36,7 +36,7 @@ export default function Produit() {
               </div>:
               
             <img
-              src={produit.image}
+              src={produit.images[0].url}
               alt={produit.nom}
               className="rounded-lg aspect-[15/8] w-full object-cover"
           />

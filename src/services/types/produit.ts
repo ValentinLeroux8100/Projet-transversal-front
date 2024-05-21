@@ -1,21 +1,31 @@
-export default class ProduitType {
-  id: string;
-  nom: string;
-  description: string;
-  image: string;
-  prix: number;
+export default class Produit {
+  id: string
+  prix: number
+  nom: string
+  description: string
+  
+  dimension: {
+    hauteur: number
+    largeur: number
+    profondeur: number
+  }
+  
+  categorie: {
+    id: string
+    nom: string
+  }
 
-  constructor(
-    id: string,
-    nom: string,
-    description: string,
-    image: string,
-    prix: number
-  ) {
-    this.id = id;
-    this.nom = nom;
-    this.description = description;
-    this.image = image;
-    this.prix = prix;
+  images: {
+    url: string
+    description: string
+  }[]
+
+  materiaux: {
+    id: string
+    nom: string
+  }[]
+  
+  toString() {
+      return this.id
   }
 }
