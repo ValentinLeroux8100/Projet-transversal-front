@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./carteProduit.module.css";
 import { Link } from "react-router-dom";
-import Produit from "services/types/produit";
+import ProduitType from "services/types/produit";
 
 interface CarteProduitProps {
-  produit: Produit;
+  produit: ProduitType;
 }
 
 export default function CarteProduit(props: CarteProduitProps) {

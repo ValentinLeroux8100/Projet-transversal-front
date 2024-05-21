@@ -1,7 +1,7 @@
 import React from "react";
-import Produit from "services/types/produit";
+import ProduitType from "services/types/produit";
 
-export default function DescriptionProduit(props: { produit: Produit }) {
+export default function DescriptionProduit(props: { produit: ProduitType }) {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex flex-row place-content-between ">

@@ -1,9 +1,9 @@
 import React from "react";
-import Produit from "services/types/produit";
+import ProduitType from "services/types/produit";
 import CarteProduit from "components/site/produit/carteProduit/carteProduit";
 
 interface ListeProduitsProps {
-  produits: Produit[];
+  produits: ProduitType[];
 }
 
 export default function ListeProduits(props: ListeProduitsProps) {
