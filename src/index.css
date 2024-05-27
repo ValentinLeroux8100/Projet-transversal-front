@@ -24,7 +24,11 @@
   }
 
   main{
-    @apply flex flex-col ;
+    @apply flex flex-col bg-background;
+  }
+
+  body{
+    @apply bg-background;
   }
 }
 

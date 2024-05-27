@@ -8,7 +8,7 @@
   }
 
   .inputContainer input {
-    @apply border-0 w-full;
+    @apply border-0 w-full bg-background;
   }
 
   .inputContainer .logo {

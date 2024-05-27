@@ -9,6 +9,9 @@ import Categorie from "pages/categorie/categorie";
 import Panier from "pages/panier/panier";
 import Inscription from "pages/inscription/inscription";
 import Checkout from "pages/checkout/checkout";
+import Connection from "pages/connection/connection";
+import AjoutAdresse from "pages/ajoutAdresse/ajoutAdresse";
+import AjoutCarteBanquaire from "pages/ajoutCarteBanquaire/ajoutCarteBanquaire";
 
 const router = createBrowserRouter([
   {
@@ -36,9 +39,27 @@ const router = createBrowserRouter([
         element: <Inscription />,
       },
       {
+        path: "connection",
+        element: <Connection />
+      },
+      { 
         path: "checkout",
         element: <Checkout />,
       },
+      {
+        path: "adresse",
+        children: [{
+          path: "ajout",
+          element: <AjoutAdresse/>
+        }]
+      },
+      {
+        path: "carte",
+        children: [{
+          path: "ajout",
+          element: <AjoutCarteBanquaire/>
+        }]
+      }
     ],
   },
 ]);
