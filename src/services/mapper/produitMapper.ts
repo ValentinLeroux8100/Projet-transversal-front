@@ -1,6 +1,5 @@
 import Produit from "services/types/produit"
 
-
 function produitRestToProduit(produitRest: Object) {
     const output = new Produit();
     output.nom = produitRest["nom"];

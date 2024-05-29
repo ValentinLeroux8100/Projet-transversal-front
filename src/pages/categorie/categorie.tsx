@@ -12,7 +12,6 @@ export default function Categorie() {
   useEffect(() => {
     const call = async () => {
       const categorieId = location.pathname.match("categories/(.*)")[1]
-      console.log(location.pathname)
       const data = await categorieService.getById(categorieId);
       setCategorie(data);
       setIsLoading(false);

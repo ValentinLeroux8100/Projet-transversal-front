@@ -10,8 +10,10 @@ import Panier from "pages/panier/panier";
 import Inscription from "pages/inscription/inscription";
 import Checkout from "pages/checkout/checkout";
 import Connection from "pages/connection/connection";
-import AjoutAdresse from "pages/ajoutAdresse/ajoutAdresse";
+import AjoutAdresse from "pages/adresse/ajoutAdresse/ajoutAdresse";
 import AjoutCarteBanquaire from "pages/ajoutCarteBanquaire/ajoutCarteBanquaire";
+import Adresse from "pages/adresse/adresse";
+import ModificationAdresse from "pages/adresse/modificationAdresse/modificationAdresse";
 
 const router = createBrowserRouter([
   {
@@ -42,22 +44,30 @@ const router = createBrowserRouter([
         path: "connection",
         element: <Connection />
       },
-      { 
+      {
         path: "checkout",
         element: <Checkout />,
       },
       {
         path: "adresse",
         children: [{
+          index: true,
+          element: <Adresse />,
+        },
+        {
           path: "ajout",
-          element: <AjoutAdresse/>
+          element: <AjoutAdresse />
+        },
+        {
+          path: "modification",
+          element: <ModificationAdresse />
         }]
       },
       {
         path: "carte",
         children: [{
           path: "ajout",
-          element: <AjoutCarteBanquaire/>
+          element: <AjoutCarteBanquaire />
         }]
       }
     ],
