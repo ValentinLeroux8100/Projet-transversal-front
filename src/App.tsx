@@ -15,6 +15,8 @@ import AjoutCarteBanquaire from "pages/carteBanquaire/ajout/ajoutCarteBanquaire"
 import Adresse from "pages/adresse/adresse";
 import ModificationAdresse from "pages/adresse/modificationAdresse/modificationAdresse";
 import CarteBanquaire from "pages/carteBanquaire/carteBanquaire";
+import Compte from "pages/compte/compte";
+import Commande from "pages/commande/commande";
 
 const router = createBrowserRouter([
   {
@@ -50,30 +52,43 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: "adresse",
-        children: [{
-          index: true,
-          element: <Adresse />,
-        },
-        {
-          path: "ajout",
-          element: <AjoutAdresse />
-        },
-        {
-          path: "modification",
-          element: <ModificationAdresse />
-        }]
-      },
-      {
-        path: "carteBanquaire",
-        children: [{
-          index: true,
-          element: <CarteBanquaire/>
-        },{
-          path: "ajout",
-          element: <AjoutCarteBanquaire />
-        }]
-      }
+        path:"compte",
+        children: [
+          {
+            index: true,
+            element: <Compte/>
+          },
+          {
+            path: "adresse",
+            children: [{
+              index: true,
+              element: <Adresse />,
+            },
+            {
+              path: "ajout",
+              element: <AjoutAdresse />
+            },
+            {
+              path: "modification",
+              element: <ModificationAdresse />
+            }]
+          },
+          {
+            path: "carteBanquaire",
+            children: [{
+              index: true,
+              element: <CarteBanquaire/>
+            },{
+              path: "ajout",
+              element: <AjoutCarteBanquaire />
+            }]
+          },
+          {
+            path: "commande",
+            element: <Commande/>
+          }
+        ]}
+      
     ],
   },
 ]);

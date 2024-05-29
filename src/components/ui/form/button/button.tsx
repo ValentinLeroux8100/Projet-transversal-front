@@ -4,16 +4,19 @@ export default function UiAirneisButton({
   icon,
   children,
   className,
+  vertical,
 }: {
   icon?: string;
   children?: string;
   className?: string;
+  vertical?: boolean
 }) {
   return (
     <button
       className={
         (className ? className : "") +
-        " flex flex-row bg-primary p-2 rounded-lg gap-2 hover:bg-primary-700 justify-center"
+        (vertical ? " flex-col-reverse  " : " flex-row") +
+        " flex bg-primary p-2 rounded-lg gap-2 hover:bg-primary-700 justify-center"
       }
     >
       {children}
