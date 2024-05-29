@@ -1,4 +1,4 @@
-import CardAdresse from "components/site/adresse/cardAdresse";
+import ListeElementAdresse from "components/site/adresse/listeElementAdresse";
 import React from "react";
 
 export default function Adresse() {
@@ -17,7 +17,7 @@ export default function Adresse() {
             <h2 className="titre-section">Adresse</h2>
             <ul>
                 {mockAdresse.map((adresse) => 
-                    <CardAdresse adresse={adresse}/>
+                    <ListeElementAdresse adresse={adresse}/>
                 )}
             </ul>
           </form>

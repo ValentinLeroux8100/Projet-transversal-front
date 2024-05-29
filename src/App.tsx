@@ -11,9 +11,10 @@ import Inscription from "pages/inscription/inscription";
 import Checkout from "pages/checkout/checkout";
 import Connection from "pages/connection/connection";
 import AjoutAdresse from "pages/adresse/ajoutAdresse/ajoutAdresse";
-import AjoutCarteBanquaire from "pages/ajoutCarteBanquaire/ajoutCarteBanquaire";
+import AjoutCarteBanquaire from "pages/carteBanquaire/ajout/ajoutCarteBanquaire";
 import Adresse from "pages/adresse/adresse";
 import ModificationAdresse from "pages/adresse/modificationAdresse/modificationAdresse";
+import CarteBanquaire from "pages/carteBanquaire/carteBanquaire";
 
 const router = createBrowserRouter([
   {
@@ -64,8 +65,11 @@ const router = createBrowserRouter([
         }]
       },
       {
-        path: "carte",
+        path: "carteBanquaire",
         children: [{
+          index: true,
+          element: <CarteBanquaire/>
+        },{
           path: "ajout",
           element: <AjoutCarteBanquaire />
         }]

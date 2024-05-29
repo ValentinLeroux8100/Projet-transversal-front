@@ -4,11 +4,11 @@ import IconeCorbeille from "assets/images/svgs/iconeCorbeille.svg";
 import IconeEdit from "assets/images/svgs/iconeEdit.svg";
 import Adresse from "services/types/adresse";
 
-interface CardAdresseProps{
+interface ListeElementAdresseProps{
     adresse: Adresse
 }
 
-export default function CardAdresse(props: CardAdresseProps){
+export default function ListeElementAdresse(props: ListeElementAdresseProps){
     const adresse = props.adresse;
 
     return <div className="w-full flex flex-row place-content-between border-y-2 border-primary items-center">
