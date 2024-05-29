@@ -1,5 +1,6 @@
 import React from "react";
 import UiAirneisButton from "components/ui/form/button/button";
+import { Link } from "react-router-dom";
 
 export default function TotalPanier() {
   return (
@@ -14,7 +15,9 @@ export default function TotalPanier() {
           <h3>200€</h3>
         </div>
       </div>
-      <UiAirneisButton className="w-full">Passer la commande</UiAirneisButton>
+      <Link to="/checkout">
+        <UiAirneisButton className="w-full">Passer la commande</UiAirneisButton>
+      </Link>
     </div>
   );
 }
