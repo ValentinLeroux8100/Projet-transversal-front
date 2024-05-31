@@ -5,8 +5,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function Compte(){
-    return <main className="gap-8 flex flex-col">
-        <section>
+    return <main className="gap-8 py-8 px-12">
+        <section className="flex flex-col gap-8">
           <h2 className="titre-section pb-4">Utilisateur</h2>
           <div className="flex flex-row gap-4 justify-center">
             <Link to="carteBanquaire">

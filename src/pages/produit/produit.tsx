@@ -7,6 +7,7 @@ import UiAirneisButton from "components/ui/form/button/button";
 import ProduitService from "services/produit.service";
 import ProduitType from "services/types/produit";
 import DescriptionProduit from "components/site/produit/descriptionProduit/descriptionProduit";
+import panierService from "services/panier.service";
 
 export default function Produit() {
   const data = produitFixtureData;
@@ -26,6 +27,10 @@ export default function Produit() {
     call();
   }, [])
 
+
+  const addToPanier = () => {
+    panierService.add(produit.id, 1)
+  }
 
   return (
     <main className="gap-8 py-8 px-12">
@@ -52,7 +57,7 @@ export default function Produit() {
               
             }
             <div className="flex gap-2 w-full">
-              <UiAirneisButton className="w-full">
+              <UiAirneisButton className="w-full" onClick={addToPanier}>
                 Ajouter au panier
               </UiAirneisButton>
               <UiAirneisButton className="w-full">Acheter</UiAirneisButton>

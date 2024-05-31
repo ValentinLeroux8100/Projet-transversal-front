@@ -21,7 +21,7 @@ module.exports = {
         secondaryText: "#6f6c6c",
       },
       gridTemplateRows: {
-        layout: "min-content minmax(90%, auto) min-content",
+        layout: "min-content minmax(76.5vh, auto) min-content",
       },
     },
   },

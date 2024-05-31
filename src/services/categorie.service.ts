@@ -16,11 +16,11 @@ class CategorieService{
 
     async getById(id: String) : Promise<Categorie>{
         return fetch(`http://localhost:8080/api/airneis/categories/${id}`, {
-            method: 'GET'
+            method: 'GET',  
         })
-        .then(result => result.json())
+        .then(result => result.json())  
         .then(json => categorieRestToCategorie(json));
-    }
+    }é
 }
 
 export default new CategorieService();

@@ -2,8 +2,10 @@ import React from "react";
 import UiAirneisButton from "components/ui/form/button/button";
 import IconeCorbeille from "assets/images/svgs/iconeCorbeille.svg";
 import UiAirneisSelect from "components/ui/form/select/select";
+import Produit from "services/types/produit";
 
-export default function CarteProduitPanier() {
+export default function CarteProduitPanier(props: {produit: Produit}) {
+  console.log(props)
   return (
     <div className="flex flex-row gap-4 max-w-full w-full">
       <img
@@ -13,8 +15,7 @@ export default function CarteProduitPanier() {
       />
       <div className="flex flex-col gap-2 w-full h-48 overflow-hidden">
         <h2 className="shrink-0 flex text-2xl capitalize font-bold w-full text-clip overflow-hidden max-h-8">
-          Lorem ipsum dolor sit consectetur adipisicing elit. Quaerat qui
-          expedita exercitationem,
+          {props.produit.nom}
         </h2>
         <p className="text-justify text-clip overflow-hidden h-full">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit
