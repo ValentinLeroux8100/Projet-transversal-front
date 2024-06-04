@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import UiAirneisButton from "components/ui/form/button/button";
 import UiAirneisInputText from "components/ui/form/inputText/inputText";
+import { useNavigate } from "react-router-dom";
+import utilisateurService from "services/utilisateur.service";
 
 export default function AjoutCarteBanquaire() {
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        if(utilisateurService.getToken() == null) 
+            navigate("/connection")
+    }, [])
+      
     return (
         <main className="gap-8 py-8 px-12">
             <section className="flex flex-col items-center">

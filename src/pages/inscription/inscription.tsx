@@ -19,13 +19,12 @@ export default function Inscription() {
       email: email,
       motDePasse : password
     });
+    
     if(token)
       navigate("/compte")
   }
 
-  useEffect(() => {
-    call();
-  }, [])
+  useEffect(() => { call(); }, [])
 
 
   return (

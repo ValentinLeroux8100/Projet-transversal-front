@@ -1,6 +1,8 @@
 
 import ListeElementCarteBanquaire from "components/site/carteBanquaire/ListElementCarteBanquaire";
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import utilisateurService from "services/utilisateur.service";
 
 export default function CarteBanquaire() {
     const mockCarte = [{
@@ -10,6 +12,14 @@ export default function CarteBanquaire() {
       annee: 25,
       ccv: 234,
     }]
+
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+      if(utilisateurService.getToken() == null) 
+        navigate("/connection")
+    }, [])
+    
 
     return (
       <main className="gap-8 py-8 px-12">

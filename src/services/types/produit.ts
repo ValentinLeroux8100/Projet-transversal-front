@@ -3,6 +3,7 @@ export default class Produit {
   prix: number
   nom: string
   description: string
+  quantite?: number
   
   dimension: {
     hauteur: number

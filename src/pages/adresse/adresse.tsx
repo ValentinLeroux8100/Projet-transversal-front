@@ -1,5 +1,7 @@
 import ListeElementAdresse from "components/site/adresse/listeElementAdresse";
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import utilisateurService from "services/utilisateur.service";
 
 export default function Adresse() {
     const mockAdresse = [{
@@ -9,6 +11,13 @@ export default function Adresse() {
         ville: "lille",
         departement : "haut-de-france"
     }]
+
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+      if(utilisateurService.getToken() == null) 
+        navigate("/connection")
+    }, [])
 
     return (
       <main className="gap-8 py-8 px-12">

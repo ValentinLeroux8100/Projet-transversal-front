@@ -1,10 +1,19 @@
 import UiAirneisButton from "components/ui/form/button/button";
 import IconeCarte from "assets/images/svgs/iconeCarte.svg";
 import IconeAdresse from "assets/images/svgs/iconeAdresse.svg";
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import utilisateurService from "services/utilisateur.service";
 
 export default function Compte(){
+    const navigate = useNavigate()
+
+    useEffect(()=>{
+        if(utilisateurService.getToken() == null) 
+            navigate("/connection")
+    }, [])
+    
+    
     return <main className="gap-8 py-8 px-12">
         <section className="flex flex-col gap-8">
           <h2 className="titre-section pb-4">Utilisateur</h2>
