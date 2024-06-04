@@ -15,14 +15,17 @@ module.exports = {
         },
         secondary: "#A58268",
         thirdy: "#C0A79A",
-        background: "#FFFFFF",
+        background: "#F4F9FC",
         valid: "#BFFFAF",
         text: "#1B1A19",
         secondaryText: "#6f6c6c",
       },
       gridTemplateRows: {
-        layout: "min-content minmax(90%, auto) min-content",
+        layout: "min-content minmax(76.5vh, auto) min-content"
       },
+      gridTemplateColumns: {
+        panier: "min-content full min-content"
+      }
     },
   },
   plugins: [],

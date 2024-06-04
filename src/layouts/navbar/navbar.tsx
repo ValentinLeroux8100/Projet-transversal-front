@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import iconeMenu from "assets/images/svgs/iconeBurgerMenu.svg";
 import iconeRecherche from "assets/images/svgs/iconeRecherche.svg";
+import iconeCompte from "assets/images/svgs/iconeProfil.svg";
 
 import UiAirneisInputText from "components/ui/form/inputText/inputText";
 import IconePanier from "components/site/panier/iconePanier/iconePanier";
@@ -25,8 +26,13 @@ export default function Navbar() {
           icon={iconeRecherche}
         ></UiAirneisInputText>
       </div>
-      <div className="flex justify-end w-max">
-        <IconePanier nombreObjetsPanier={2}></IconePanier>
+      <div className="flex flex-row gap-4">
+        <Link to="connection" className="flex justify-end w-max">
+          <img className="size-8" src={iconeCompte} alt="icone compte" />
+        </Link>
+        <Link to="panier" className="flex justify-end w-max">
+          <IconePanier nombreObjetsPanier={2}></IconePanier>
+        </Link>
       </div>
     </nav>
   );

@@ -13,10 +13,7 @@ export default function ListeCategories(props: ListeCategoriesProps) {
     <div className="flex flex-row flex-wrap place-content-evenly gap-4 p-4">
       {categories.map((categorie) => {
         return (
-          <CarteCategorie
-            image={categorie.image}
-            nom={categorie.nom}
-          ></CarteCategorie>
+          <CarteCategorie categorie={categorie} key={categorie.id}></CarteCategorie>
         );
       })}
     </div>
