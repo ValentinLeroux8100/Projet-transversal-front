@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Suspense, lazy } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import LoadingAnimation from "assets/images/gifs/loadingAnimation.gif";
 import ListeProduits from "components/site/produit/listeProduits/ListeProduits";
 import produitFixtureData from "fixture/produitFixture";
@@ -8,11 +8,13 @@ import ProduitService from "services/produit.service";
 import ProduitType from "services/types/produit";
 import DescriptionProduit from "components/site/produit/descriptionProduit/descriptionProduit";
 import panierService from "services/panier.service";
+import utilisateurService from "services/utilisateur.service";
 
 export default function Produit() {
   const data = produitFixtureData;
 
   const location = useLocation()
+  const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [produit, setProduit] = useState<ProduitType>();
 
@@ -23,13 +25,20 @@ export default function Produit() {
       setProduit(data);
       setIsLoading(false);
     }
-
     call();
   }, [])
 
 
   const addToPanier = () => {
-    panierService.add(produit.id, 1)
+    if(utilisateurService.getToken() == null) 
+      navigate("/connection")
+    else
+      panierService.add(produit.id, 1)
+  }
+
+  const goToChecktout = () => {
+    addToPanier()
+    navigate("/checkout")
   }
 
   return (
@@ -60,7 +69,7 @@ export default function Produit() {
               <UiAirneisButton className="w-full" onClick={addToPanier}>
                 Ajouter au panier
               </UiAirneisButton>
-              <UiAirneisButton className="w-full">Acheter</UiAirneisButton>
+              <UiAirneisButton className="w-full" onClick={goToChecktout}>Acheter</UiAirneisButton>
             </div>
           </div>
       </section>

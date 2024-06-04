@@ -30,6 +30,7 @@ export default function Connection() {
           <UiAirneisInputText
             placeholder="*******"
             label="Mots de passe"
+            isPassword={true}
             onChange={setPassword}
           ></UiAirneisInputText>
 

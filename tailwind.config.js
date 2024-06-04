@@ -21,8 +21,11 @@ module.exports = {
         secondaryText: "#6f6c6c",
       },
       gridTemplateRows: {
-        layout: "min-content minmax(76.5vh, auto) min-content",
+        layout: "min-content minmax(76.5vh, auto) min-content"
       },
+      gridTemplateColumns: {
+        panier: "min-content full min-content"
+      }
     },
   },
   plugins: [],

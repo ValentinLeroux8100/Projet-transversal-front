@@ -34,7 +34,7 @@ export default function Checkout() {
   }, [])
 
   return (
-    <main className="gap-8 md:grid md:grid-cols-2">
+    <main className="lg:grid lg:grid-cols-2">
       <section className="bg-thirdy py-8 px-32">
         <form className="flex flex-col gap-4">
           <h2 className="titre-section pb-4">Adresse Livraison</h2>

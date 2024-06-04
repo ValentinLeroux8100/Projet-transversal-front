@@ -1,6 +1,5 @@
 import React from "react";
 import UiAirneisButton from "components/ui/form/button/button";
-import { Link } from "react-router-dom";
 import Produit from "services/types/produit";
 
 export default function TotalPanier(props: {produits: Produit[], onValidate?: any}) {
