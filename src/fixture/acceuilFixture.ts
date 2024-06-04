@@ -6,7 +6,7 @@ const acceuilFixtureData = {
   ],
   categories: [
     new Categorie(
-      "66475329fe24636ccfeda58c",
+      "665f03be7028164137cf8bf9",
       "Chambre",
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7"
     ),

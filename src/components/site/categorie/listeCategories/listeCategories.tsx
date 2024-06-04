@@ -10,7 +10,7 @@ export default function ListeCategories(props: ListeCategoriesProps) {
   const categories = props.categories;
 
   return (
-    <div className="flex flex-row flex-wrap place-content-evenly gap-4 p-4">
+    <div className="flex flex-row flex-wrap place-content-evenly gap-12 p-4">
       {categories.map((categorie) => {
         return (
           <CarteCategorie categorie={categorie} key={categorie.id}></CarteCategorie>
