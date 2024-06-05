@@ -39,8 +39,7 @@ export default function AjoutAdresse() {
     adresse.numeroDeRue = data["rue"]
     
 
-    adresseService.get()
-    .then(adresses => { 
+    adresseService.get().then(adresses => { 
       adresseService.add([...adresses, adresse])
     })
   }

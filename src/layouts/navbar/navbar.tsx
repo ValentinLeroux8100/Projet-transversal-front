@@ -20,12 +20,13 @@ export default function Navbar() {
           Airneis
         </Link>
       </div>
-      <div>
+      <form action="/recherche">
         <UiAirneisInputText
+          name="critere"
           placeholder="Rechercher un produit"
           icon={iconeRecherche}
         ></UiAirneisInputText>
-      </div>
+      </form>
       <div className="flex flex-row gap-4">
         <Link to="connection" className="flex justify-end w-max">
           <img className="size-8" src={iconeCompte} alt="icone compte" />

@@ -17,6 +17,7 @@ import ModificationAdresse from "pages/adresse/modificationAdresse/modificationA
 import CarteBanquaire from "pages/carteBanquaire/carteBanquaire";
 import Compte from "pages/compte/compte";
 import Commande from "pages/commande/commande";
+import Recherche from "pages/recherche/recherche";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "panier",
         element: <Panier />,
+      },
+      {
+        path: "recherche",
+        element: <Recherche />,
       },
       {
         path: "inscription",
