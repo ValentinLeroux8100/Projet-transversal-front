@@ -18,6 +18,7 @@ import CarteBanquaire from "pages/carteBanquaire/carteBanquaire";
 import Compte from "pages/compte/compte";
 import Commande from "pages/commande/commande";
 import Recherche from "pages/recherche/recherche";
+import DetailCommande from "pages/commande/detail/detailCommande";
 
 const router = createBrowserRouter([
   {
@@ -90,7 +91,10 @@ const router = createBrowserRouter([
           },
           {
             path: "commande",
-            element: <Commande/>
+            children: [
+              {index: true, element:<Commande/>},
+              {path: ":commandeId", element: <DetailCommande/>}
+            ]
           }
         ]}
       

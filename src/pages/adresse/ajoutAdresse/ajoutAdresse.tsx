@@ -3,9 +3,12 @@ import UiAirneisButton from "components/ui/form/button/button";
 import FormulaireAdresse from "components/site/adresse/formulaireAdresse";
 import Adresse from "services/types/adresse";
 import adresseService from "services/adresse.service";
+import { useNavigate } from "react-router-dom";
 
 export default function AjoutAdresse() {
-  const test = (event) => {
+  const navigate = useNavigate()
+
+  const addAdresse = (event) => {
     event.preventDefault()
     const inputs = Array.from(event.target)
 
@@ -32,22 +35,21 @@ export default function AjoutAdresse() {
     adresse.nom = data["nom"]
     adresse.prenom = data["prenom"]
     adresse.pays = data["pays"]
-    adresse.departement = data["departement"]
     adresse.informations = ""
     adresse.telephone = data["telephone"]
     adresse.ville = data["ville"]
-    adresse.numeroDeRue = data["rue"]
-    
+    adresse.numeroDeRue = data["rue"] 
 
-    adresseService.get().then(adresses => { 
-      adresseService.add([...adresses, adresse])
-    })
+    adresseService.add(adresse).then((response) => {
+      if(response.status == 201)
+        navigate("/compte/adresse")
+      })
   }
 
   return (
     <main className="gap-8 py-8 px-12">
       <section className="flex flex-col items-center">
-        <form className="w-full sm:w-1/2 flex flex-col gap-4" onSubmit={test}>
+        <form className="w-full sm:w-1/2 flex flex-col gap-4" onSubmit={addAdresse}>
           <h2 className="titre-section">Ajout adresse</h2>
           <FormulaireAdresse />
           <UiAirneisButton>Ajouter</UiAirneisButton>

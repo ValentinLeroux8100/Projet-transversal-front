@@ -25,6 +25,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         panier: "min-content full min-content"
+      },
+      backgroundImage: {
+        'hero-pattern': "linear-gradient(to right bottom, #0005, #0005), url('assets/images/image/background.avif')"
       }
     },
   },

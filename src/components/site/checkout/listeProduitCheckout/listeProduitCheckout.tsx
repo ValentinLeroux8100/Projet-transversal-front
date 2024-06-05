@@ -7,7 +7,7 @@ export default function ListeProduitCheckout(props: {
   produits: Produit[]
 }) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col ">
       {props.produits.map((produit) => {
         return <CarteProduitCheckout produit={produit}/>
       })}

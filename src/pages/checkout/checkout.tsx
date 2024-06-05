@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import FormulaireAdresse from "components/site/adresse/formulaireAdresse";
 import UiAirneisButton from "components/ui/form/button/button";
 import UiAirneisSelect from "components/ui/form/select/select";
-import UiAirneisCheckbox from "components/ui/form/checkbox/checkbox";
-import ListeProduitPanier from "components/site/panier/listeProduitPanier/listeProduitPanier";
 import panierService from "services/panier.service";
 import produitService from "services/produit.service";
 import ListeProduitCheckout from "components/site/checkout/listeProduitCheckout/listeProduitCheckout";
@@ -17,7 +14,23 @@ export default function Checkout() {
   const [produits, setProduits] = useState([])
   const [adresses, setAdresses] = useState([])
   const [cartes, setCartes] = useState([])
+  const [adresseFinal, setAdresseFinal] = useState()
+  const [carteFinal, setCarteFinal] = useState()
   const navigate = useNavigate()
+
+  const valideCommande = () => { 
+    console.log(adresseFinal, carteFinal)
+    panierService.validCommand(adresseFinal, carteFinal)
+      .then(response => {if(response.status == 200)navigate("/compte");})
+  }
+
+  const adresseChange = (event) => {
+    setAdresseFinal(adresses[event.target.selectedIndex])
+  }
+
+  const carteChange = (event) => {
+    setCartes(cartes[event.target.selectedIndex])
+  }
 
   useEffect(() => {
     const call = async () => {
@@ -28,8 +41,14 @@ export default function Checkout() {
         return produitEnBase
       }))
       
-      adresseService.get().then(adressesEnBase => setAdresses(adressesEnBase))
-      carteBanquaireService.get().then(cartesEnBase => setCartes(cartesEnBase))
+      adresseService.get().then(adressesEnBase => {
+        setAdresses(adressesEnBase)
+        setAdresseFinal(adressesEnBase[0])
+      })
+      carteBanquaireService.get().then(cartesEnBase => {
+        setCartes(cartesEnBase)
+        setCarteFinal(cartesEnBase[0])
+      })
  
       setProduits(produitsEnBase)
     }
@@ -43,15 +62,16 @@ export default function Checkout() {
   return (
     <main className="lg:grid lg:grid-cols-2">
       <section className="bg-thirdy py-8 px-32">
-        <form className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <h2 className="titre-section pb-4">Acheter</h2>
-          <UiAirneisSelect values={adresses.map(adresse => `${adresse.numeroDeRue} ${adresse.ville}`)} />
-          <UiAirneisSelect values={adresses.map(adresse => `${adresse.numeroDeRue} ${adresse.ville}`)} />
-          <UiAirneisSelect values={cartes.map(carte => `**** **** **** ${carte.numeroCarte.slice(-4)}`)} />
+          <UiAirneisSelect onChange={adresseChange} values={
+            adresses.map(adresse => `${adresse.numeroDeRue} ${adresse.ville}`)
+          } />
+          <UiAirneisSelect onChange={carteChange} values={cartes.map(carte => `**** **** **** ${carte.numeroCarte.slice(-4)}`)} />
           <div className="flex flex-row gap-4 w-full">
-            <UiAirneisButton className="w-full">Payer</UiAirneisButton>
+            <UiAirneisButton className="w-full" onClick={valideCommande}>Payer</UiAirneisButton>
           </div>
-        </form>
+        </div>
       </section>
 
       <aside>

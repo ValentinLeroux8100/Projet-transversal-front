@@ -74,10 +74,6 @@ export default function Produit() {
           </div>
       </section>
 
-      <section className="flex flex-col gap-4">
-        <h2 className="titre-section">Produit similaire</h2>
-        <ListeProduits produits={data.produitsRecommandes}></ListeProduits>
-      </section>
     </main>
   );
 }

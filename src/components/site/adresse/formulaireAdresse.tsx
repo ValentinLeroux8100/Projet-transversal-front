@@ -20,7 +20,6 @@ export default function FormulaireAdresse(props: FormulaireAdresseProps) {
       </div>
       <UiAirneisInputText name="pays" placeholder="France" label="Pays" />
       <UiAirneisInputText name="region" placeholder="Haut-de-France" label="Région" />
-      <UiAirneisInputText name="departement" placeholder="Nord" label="Département" />
       <UiAirneisInputText
         name="telephone"
         placeholder="0606060606"

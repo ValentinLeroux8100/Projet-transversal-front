@@ -11,7 +11,7 @@ interface ListeElementCarteBanquaireProps{
 export default function ListeElementCarteBanquaire(props: ListeElementCarteBanquaireProps){
     const carte = props.carte;
 
-    return <Link to="/" className="w-full flex flex-row place-content-between border-y-2 border-primary items-center">
+    return <div key={carte.nom} className="w-full flex flex-row place-content-between border-y-2 border-primary items-center">
         <div className="w-max">
             <h2 className="text-xl">{carte.nom}</h2>
             <p>**** **** **** {carte.numero.slice(12, 16)}</p>
@@ -20,5 +20,5 @@ export default function ListeElementCarteBanquaire(props: ListeElementCarteBanqu
         <div className="flex flex-row gap-2">
             <UiAirneisButton icon={IconeCorbeille} />
         </div>
-    </Link>
+    </div>
 }

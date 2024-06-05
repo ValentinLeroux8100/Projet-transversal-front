@@ -10,17 +10,16 @@ import IconePanier from "components/site/panier/iconePanier/iconePanier";
 
 export default function Navbar() {
   return (
-    <nav>
+    <nav >
       <div className="flex gap-4 w-max">
-        <img src={iconeMenu} alt="icone menu burger" className="h-[1.1em]" />
         <Link
           to="/"
-          className="font-bold text-4xl hidden lg:block font-logo text-primary"
+          className="font-bold text-4xl font-logo text-primary"
         >
-          Airneis
+          A<span className="hidden lg:inline font-bold text-4xl font-logo text-primary">irneis</span>
         </Link>
       </div>
-      <form action="/recherche">
+      <form action="/recherche" className="lg:w-full w-48">
         <UiAirneisInputText
           name="critere"
           placeholder="Rechercher un produit"

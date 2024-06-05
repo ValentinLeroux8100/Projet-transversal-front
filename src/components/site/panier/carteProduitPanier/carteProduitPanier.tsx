@@ -3,6 +3,7 @@ import UiAirneisButton from "components/ui/form/button/button";
 import IconeCorbeille from "assets/images/svgs/iconeCorbeille.svg";
 import UiAirneisSelect from "components/ui/form/select/select";
 import Produit from "services/types/produit";
+import panierService from "services/panier.service";
 
 export default function CarteProduitPanier(props: {produit: Produit, onChange?: any}) {
   const handleChange = (event) => {
@@ -12,15 +13,23 @@ export default function CarteProduitPanier(props: {produit: Produit, onChange?: 
     })
   }
 
+
+  const handleDelete = () => {
+    panierService.delete(props.produit.id).then(result => {
+      if(result.status == 200)
+        window.location.reload();
+    })
+  }
+
   return (
-    <div className="flex flex-row gap-4 max-w-full w-full">
+    <div key={props.produit.nom} className="flex flex-row gap-4 max-w-full w-full">
       <img
-        className="size-48 rounded-lg"
+        className="object-center object-cover min-w-48 size-48 rounded-lg"
         src={props.produit.images[0].url}
         alt={props.produit.images[0].description}
       />
       <div className="flex flex-col gap-2 w-full h-48 overflow-hidden">
-        <div className="flex flex-rows ">
+        <div className="flex md:flex-row flex-col justify-start gap-2">
           <h2 className="flex text-2xl capitalize font-bold w-full text-clip overflow-hidden max-h-8">
             {props.produit.nom}
           </h2>
@@ -35,7 +44,7 @@ export default function CarteProduitPanier(props: {produit: Produit, onChange?: 
             selectionnedValue={props.produit.quantite}
             onChange={handleChange}
           ></UiAirneisSelect>
-          <UiAirneisButton icon={IconeCorbeille} />
+          <UiAirneisButton onClick={handleDelete} icon={IconeCorbeille} />
         </div>
       </div>
     </div>

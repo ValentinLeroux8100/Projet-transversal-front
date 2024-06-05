@@ -16,7 +16,7 @@ export default function AjoutCarteBanquaire() {
         <main className="gap-8 py-8 px-12">
             <section className="flex flex-col items-center">
                 <form action="" className="w-full sm:w-1/2 flex flex-col gap-4">
-                    <h2 className="titre-section">Ajout adresse</h2>
+                    <h2 className="titre-section">Ajout Carte</h2>
                     <UiAirneisInputText placeholder="**** **** **** 1234" label="Numéro de carte" />
 
                     <div className="flex flex-row gap-4">

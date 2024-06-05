@@ -6,17 +6,8 @@ import adresseService from "services/adresse.service";
 import utilisateurService from "services/utilisateur.service";
 
 export default function Adresse() {
-    const mockAdresse = [{
-        codePostal: "23451",
-        numeroDeRue: "32",
-        informations:  "efk,lzfe",
-        ville: "lille",
-        departement : "haut-de-france"
-    }]
-
     const navigate = useNavigate()
     const [adresses, setAdresses] = useState([])
-
     useEffect(()=>{
       
       adresseService.get().then(adressesEnBase => {
