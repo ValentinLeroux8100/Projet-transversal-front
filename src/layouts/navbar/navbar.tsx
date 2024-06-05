@@ -31,7 +31,7 @@ export default function Navbar() {
           <img className="size-8" src={iconeCompte} alt="icone compte" />
         </Link>
         <Link to="panier" className="flex justify-end w-max">
-          <IconePanier nombreObjetsPanier={2}></IconePanier>
+          <IconePanier></IconePanier>
         </Link>
       </div>
     </nav>

@@ -1,6 +1,8 @@
 import ListeElementAdresse from "components/site/adresse/listeElementAdresse";
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import UiAirneisButton from "components/ui/form/button/button";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import adresseService from "services/adresse.service";
 import utilisateurService from "services/utilisateur.service";
 
 export default function Adresse() {
@@ -13,8 +15,14 @@ export default function Adresse() {
     }]
 
     const navigate = useNavigate()
+    const [adresses, setAdresses] = useState([])
 
     useEffect(()=>{
+      
+      adresseService.get().then(adressesEnBase => {
+        setAdresses(adressesEnBase)
+      })
+
       if(utilisateurService.getToken() == null) 
         navigate("/connection")
     }, [])
@@ -22,14 +30,17 @@ export default function Adresse() {
     return (
       <main className="gap-8 py-8 px-12">
         <section className="flex flex-col items-center">
-          <form action="" className="w-full sm:w-1/2 flex flex-col gap-4">
             <h2 className="titre-section">Adresse</h2>
-            <ul>
-                {mockAdresse.map((adresse) => 
-                    <ListeElementAdresse adresse={adresse}/>
-                )}
-            </ul>
-          </form>
+            <div className="w-full sm:w-1/2 flex flex-col gap-4">
+              <ul>
+                  {adresses.map((adresse) => 
+                      <ListeElementAdresse adresse={adresse}/>
+                  )}
+              </ul>
+            </div>
+            <Link to="ajout">
+              <UiAirneisButton>Ajouter une adresse</UiAirneisButton>
+            </Link>
         </section>
       </main>
     );

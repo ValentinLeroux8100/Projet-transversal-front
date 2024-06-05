@@ -4,4 +4,5 @@ export default class CarteBanquaire{
     mois: number
     annee: number
     ccv: number
+    estParDefaut: boolean
 }

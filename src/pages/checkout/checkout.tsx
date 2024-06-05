@@ -9,10 +9,14 @@ import produitService from "services/produit.service";
 import ListeProduitCheckout from "components/site/checkout/listeProduitCheckout/listeProduitCheckout";
 import utilisateurService from "services/utilisateur.service";
 import { useNavigate } from "react-router-dom";
+import adresseService from "services/adresse.service";
+import carteBanquaireService from "services/carteBanquaire.service";
 
 export default function Checkout() {
 
   const [produits, setProduits] = useState([])
+  const [adresses, setAdresses] = useState([])
+  const [cartes, setCartes] = useState([])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -23,7 +27,10 @@ export default function Checkout() {
         produitEnBase.quantite = produit.quantite;
         return produitEnBase
       }))
-
+      
+      adresseService.get().then(adressesEnBase => setAdresses(adressesEnBase))
+      carteBanquaireService.get().then(cartesEnBase => setCartes(cartesEnBase))
+ 
       setProduits(produitsEnBase)
     }
 
@@ -37,16 +44,12 @@ export default function Checkout() {
     <main className="lg:grid lg:grid-cols-2">
       <section className="bg-thirdy py-8 px-32">
         <form className="flex flex-col gap-4">
-          <h2 className="titre-section pb-4">Adresse Livraison</h2>
-          <UiAirneisSelect values={[""]} />
-          <FormulaireAdresse />
-          <label className="flex flex-row gap-4 items-center">
-            <UiAirneisCheckbox />
-            Utiliser la même adresse pour la facturation
-          </label>
+          <h2 className="titre-section pb-4">Acheter</h2>
+          <UiAirneisSelect values={adresses.map(adresse => `${adresse.numeroDeRue} ${adresse.ville}`)} />
+          <UiAirneisSelect values={adresses.map(adresse => `${adresse.numeroDeRue} ${adresse.ville}`)} />
+          <UiAirneisSelect values={cartes.map(carte => `**** **** **** ${carte.numeroCarte.slice(-4)}`)} />
           <div className="flex flex-row gap-4 w-full">
-            <UiAirneisButton className="w-full">Précédent</UiAirneisButton>
-            <UiAirneisButton className="w-full">Suivant</UiAirneisButton>
+            <UiAirneisButton className="w-full">Payer</UiAirneisButton>
           </div>
         </form>
       </section>

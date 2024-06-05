@@ -10,17 +10,19 @@ export default function FormulaireAdresse(props: FormulaireAdresseProps) {
   return (
     <>
       <div className="flex flex-col md:flex-row  gap-4">
-        <UiAirneisInputText placeholder="John" label="Prénom"/>
-        <UiAirneisInputText placeholder="doe" label="Nom" />
+        <UiAirneisInputText name="prenom" placeholder="John" label="Prénom"/>
+        <UiAirneisInputText name="nom" placeholder="doe" label="Nom" />
       </div>
-      <UiAirneisInputText placeholder="32 paper street" label="Adresse" />
+      <UiAirneisInputText name="rue" placeholder="32 paper street" label="Adresse" />
       <div className="flex flex-col md:flex-row gap-4">
-        <UiAirneisInputText placeholder="00000" label="Code Postal" value={props.addresse?.codePostal}/>
-        <UiAirneisInputText placeholder="Lille" label="Ville" value={props.addresse?.ville}/>
+        <UiAirneisInputText name="code" placeholder="00000" label="Code Postal" value={props.addresse?.codePostal}/>
+        <UiAirneisInputText name="ville" placeholder="Lille" label="Ville" value={props.addresse?.ville}/>
       </div>
-      <UiAirneisInputText placeholder="Haut-de-France" label="Région" />
-      <UiAirneisInputText placeholder="France" label="Pays" />
+      <UiAirneisInputText name="pays" placeholder="France" label="Pays" />
+      <UiAirneisInputText name="region" placeholder="Haut-de-France" label="Région" />
+      <UiAirneisInputText name="departement" placeholder="Nord" label="Département" />
       <UiAirneisInputText
+        name="telephone"
         placeholder="0606060606"
         label="Numéro de téléphone"
       />

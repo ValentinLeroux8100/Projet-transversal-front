@@ -4,4 +4,8 @@ export default class Adresse{
     informations:  string
     ville: string
     departement : string
+    pays: string
+    telephone: string
+    prenom: string
+    nom: string
 }
