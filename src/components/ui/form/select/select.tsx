@@ -17,7 +17,7 @@ export default function UiAirneisSelect(props: SelectProps) {
       onChange={props.onChange}
     >
       {props.values.map((value, index) => {
-        return <option value={value} selected={props.selectionnedValue == index+1}>{value}</option>;
+        return <option key={value} value={value} selected={props.selectionnedValue == index+1}>{value}</option>;
       })}
     </select>
   );

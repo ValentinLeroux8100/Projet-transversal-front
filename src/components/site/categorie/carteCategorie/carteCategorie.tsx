@@ -11,7 +11,7 @@ export default function CarteCategorie(props: CarteCategorieProps) {
   const {nom, image, id} = {...props.categorie}
 
   return (
-    <Link to={`/categories/${id}`} className={styles["carte-categorie"]}>
+    <Link to={`/categories/${id}`} key={nom} className={styles["carte-categorie"]}>
       <img src={image} alt="" />
       <div className={styles["description"]}>
         <h2>{nom}</h2>

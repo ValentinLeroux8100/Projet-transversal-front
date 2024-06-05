@@ -42,10 +42,11 @@
 nav {
   position: sticky;
   top: 0;
+  z-index: 100;
 
   width: 100vw;
   display: grid;
-  grid-template-columns: min-content minmax(70%, max-content) min-content;
+  grid-template-columns: min-content minmax(40%, max-content) min-content;
   align-items: center;
   gap: 40px;
   justify-content: space-between;
@@ -56,6 +57,8 @@ nav {
 
   background-color: var(--secondary);
 }
+
+
 
 nav > * {
   display: flex;

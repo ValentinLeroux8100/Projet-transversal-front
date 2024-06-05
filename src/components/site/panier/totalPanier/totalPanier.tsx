@@ -19,7 +19,8 @@ export default function TotalPanier(props: {produits: Produit[], onValidate?: an
           <h3>{(total * 0.2).toFixed(2)}€</h3>
         </div>
       </div>
-      <UiAirneisButton className="w-full" onClick={props.onValidate}>Passer la commande</UiAirneisButton>
+      {props.onValidate && 
+      <UiAirneisButton className="w-full" onClick={props.onValidate}>Passer la commande</UiAirneisButton>}
     </div>
   );
 }

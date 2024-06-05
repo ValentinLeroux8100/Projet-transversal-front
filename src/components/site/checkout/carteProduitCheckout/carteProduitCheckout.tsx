@@ -4,14 +4,14 @@ import Produit from "services/types/produit";
 export default function CarteProduitCheckout(props: {produit: Produit}) {
   return (
 
-    <div className="flex flex-row p-8 gap-4 max-w-full w-full">
+    <div key={props.produit.nom} className="flex flex-row p-8 gap-4 max-w-full w-full">
         <img
-        className="size-48 rounded-lg"
+        className="object-center object-cover min-w-48 size-48 rounded-lg"
         src={props.produit.images[0].url}
         alt={props.produit.images[0].description}
         />
-        <div className="flex flex-col gap-2  w-full h-48 overflow-hidden">
-            <div className="flex flex-rows ">
+        <div className="flex flex-col gap-2 w-full h-48 overflow-hidden">
+            <div className="flex md:flex-row flex-col">
                 <h2 className="flex text-2xl capitalize font-bold w-full text-clip overflow-hidden max-h-8">
                     {props.produit.nom}
                 </h2>

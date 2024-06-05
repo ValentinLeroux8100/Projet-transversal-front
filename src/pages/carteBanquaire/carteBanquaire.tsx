@@ -1,9 +1,11 @@
 
 import ListeElementCarteBanquaire from "components/site/carteBanquaire/ListElementCarteBanquaire";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import carteBanquaireService from "services/carteBanquaire.service";
 import utilisateurService from "services/utilisateur.service";
+import carteBanquaireRestToCarteBanquaire from "services/mapper/carteBanquaireMapper";
+import UiAirneisButton from "components/ui/form/button/button";
 
 export default function CarteBanquaire() {
     const [cartes, setCartes] = useState([])
@@ -11,7 +13,11 @@ export default function CarteBanquaire() {
 
     useEffect(()=>{
       const call = async () => {
-        carteBanquaireService.get().then(cartesEnBase => setCartes(cartesEnBase))
+        carteBanquaireService.get().then(cartesEnBase => {
+          setCartes(cartesEnBase.map((carte) => {
+            return carteBanquaireRestToCarteBanquaire(carte)
+          }))
+        })
       }
 
       if(utilisateurService.getToken() == null) 
@@ -24,14 +30,17 @@ export default function CarteBanquaire() {
     return (
       <main className="gap-8 py-8 px-12">
         <section className="flex flex-col items-center">
-          <form action="" className="w-full sm:w-1/2 flex flex-col gap-4">
+          <div className="w-full sm:w-1/2 flex flex-col gap-4">
             <h2 className="titre-section">Carte Banquaire</h2>
             <ul>
                 {cartes.map((carte) => 
                     <ListeElementCarteBanquaire carte={carte}/>
                 )}
             </ul>
-          </form>
+          </div>
+          <Link to="ajout">
+            <UiAirneisButton>Ajouter une carte banquaire</UiAirneisButton>
+          </Link>
         </section>
       </main>
     );

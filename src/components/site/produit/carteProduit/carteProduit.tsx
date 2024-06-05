@@ -12,7 +12,7 @@ export default function CarteProduit(props: CarteProduitProps) {
 
   return (
     <Link to={`/produits/${id}`} className={styles["carte-produit"]}>
-      <img src={images[0].url} alt={images[0].description} />
+      <img className="object-center object-cover min-w-48 min-h-48 " src={images[0].url} alt={images[0].description} />
       <div className={styles["description"]}>
         <div>
           <h2>{nom}</h2>
