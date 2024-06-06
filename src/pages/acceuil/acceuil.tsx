@@ -2,9 +2,29 @@ import React, { useEffect, useState } from "react";
 import ListeProduits from "components/site/produit/listeProduits/ListeProduits";
 import ListeCategories from "components/site/categorie/listeCategories/listeCategories";
 import acceuilFixtureData from "fixture/acceuilFixture";
+import categorieService from "services/categorie.service";
 
 export default function Acceuil() {
-  const { produits, categories } = acceuilFixtureData;
+  const [categories, setCategories] = useState([])
+  const [produits, setProduits] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  const call = async () => {
+    const categoriesEnBase = await categorieService.getAll()
+    const produitsEnBase =  categoriesEnBase[0].produits.map(produit => {
+      produit.images = [produit.image]
+      return produit
+    });
+    console.log(produitsEnBase)
+    setCategories(categoriesEnBase)
+    setProduits(produitsEnBase)
+    setIsLoading(false)
+  }
+
+  useEffect(() => {
+    call()
+  } , [])
+
 
   return (
     <main className="gap-8">
@@ -14,7 +34,7 @@ export default function Acceuil() {
         </h2>
       </div>
       <section className="px-12">
-        <ListeCategories categories={categories}></ListeCategories>
+        {!isLoading && <ListeCategories categories={categories} /> }
       </section>
       <section className="px-12">
         <h2 className="titre-section">Les Highlanders du moment</h2>

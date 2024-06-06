@@ -2,15 +2,11 @@ import categorieRestToCategorie from "./mapper/categorieMapper";
 import Categorie from "./types/categorie";
 
 class CategorieService{
-    async getAll() : Promise<Categorie[]>{
+    async getAll() {
         return fetch("http://localhost:8080/api/airneis/categorie", {
             method: 'GET'
         })
-        .then(result => result.json())
-        .then(json => json._embedded.categorieRestRessourceList.map(
-            categorieRest =>
-            categorieRestToCategorie(categorieRest)
-        ));
+        .then(result => result.json());
     }
 
 

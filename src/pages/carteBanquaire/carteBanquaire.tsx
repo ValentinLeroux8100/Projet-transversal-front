@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import carteBanquaireService from "services/carteBanquaire.service";
 import utilisateurService from "services/utilisateur.service";
-import carteBanquaireRestToCarteBanquaire from "services/mapper/carteBanquaireMapper";
+import {carteBanquaireRestToCarteBanquaire} from "services/mapper/carteBanquaireMapper";
 import UiAirneisButton from "components/ui/form/button/button";
 
 export default function CarteBanquaire() {

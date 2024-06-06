@@ -33,6 +33,7 @@ export default function Panier() {
     }))
   }
 
+
   useEffect(() => {
       const call = async () => {
       const panier = (await panierService.get())
