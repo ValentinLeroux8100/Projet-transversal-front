@@ -17,7 +17,7 @@ class PanierService{
     }
 
     async delete(produitId: string){
-        return fetch("http://localhost:8080/api/panier/article?" + new URLSearchParams({
+        return fetch("http://localhost:8080/api/utilisateur/panier/article?" + new URLSearchParams({
             idArticle: produitId,
         }), {
             method: 'DELETE',

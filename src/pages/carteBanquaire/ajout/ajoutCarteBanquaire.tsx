@@ -5,30 +5,50 @@ import { useNavigate } from "react-router-dom";
 import utilisateurService from "services/utilisateur.service";
 import CarteBanquaireService from "services/carteBanquaire.service";
 import CarteBanquaire from "services/types/carteBanquaire";
+import carteBanquaireService from "services/carteBanquaire.service";
+import { carteBanquaireToCarteBanquaireRest } from "services/mapper/carteBanquaireMapper";
 
 export default function AjoutCarteBanquaire() {
     const navigate = useNavigate();
-    const [carte, setCarte] = useState(new CarteBanquaire());
+
+    const [numero, setNunero] = useState("")
+    const [mois, setMois] = useState("")
+    const [annee, setAnnee] = useState("")
+    const [ccv, setCcv] = useState("")
+    const [nom, setNom] = useState("")
+    
+    const [cartes, setCartes] = useState([]);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         if (utilisateurService.getToken() == null) {
             navigate("/connection");
+        }else{
+            carteBanquaireService.get()
+                .then((cartesBanquaires) => setCartes(cartesBanquaires))
         }
     }, [navigate]);
-
-    const handleInputChange = (name, value) => {
-        setCarte(prevState => ({
-            ...prevState,
-            [name]: name === 'mois' || name === 'annee' || name === 'ccv' ? parseInt(value) : value
-        }));
-    };
 
     const ajouterUneCarte = async (e) => {
         e.preventDefault();
         try {
-            await CarteBanquaireService.add(carte);
-            navigate('/success'); // Rediriger vers une page de succès ou autre
+            const carteAInserer = new CarteBanquaire();
+            carteAInserer.annee = parseInt(annee)
+            carteAInserer.mois = parseInt(mois)
+            carteAInserer.ccv = parseInt(ccv)
+            carteAInserer.numero = numero
+            carteAInserer.nom = nom
+            console.log(carteBanquaireToCarteBanquaireRest(carteAInserer))
+            await CarteBanquaireService.add([
+                ...cartes.map(carteEnBase => {
+                    carteEnBase.codeSecurite = parseInt(carteEnBase.codeSecurite)
+                    return carteEnBase
+                }), 
+                carteBanquaireToCarteBanquaireRest(carteAInserer)
+            ]).then(result => {
+                if(result.status == 200)
+                    navigate("/compte/carteBanquaire")
+            });
         } catch (error) {
             setError("Erreur lors de l'ajout de la carte bancaire.");
         }
@@ -46,8 +66,7 @@ export default function AjoutCarteBanquaire() {
                         label="Numéro de carte"
                         required={true}
                         pattern="\d{16}"
-                        value={carte.numero}
-                        onChange={(e) => handleInputChange("numero", e.target.value)}
+                        onChange={setNunero}
                     />
                     <div className="flex flex-row gap-4">
                         <UiAirneisInputText
@@ -55,16 +74,14 @@ export default function AjoutCarteBanquaire() {
                             placeholder="10"
                             label="Mois"
                             required={true}
-                            value={carte.mois.toString()}
-                            onChange={(e) => handleInputChange("mois", e.target.value)}
+                            onChange={setMois}
                         />
                         <UiAirneisInputText
                             name="annee"
                             placeholder="11"
                             label="Année"
                             required={true}
-                            value={carte.annee}
-                            onChange={(e) => handleInputChange("annee", e.target.value)}
+                            onChange={setAnnee}
                         />
                     </div>
                     <div className="w-14">
@@ -74,8 +91,7 @@ export default function AjoutCarteBanquaire() {
                             label="CVV"
                             required={true}
                             pattern="\d{3}"
-                            value={carte.ccv}
-                            onChange={(e) => handleInputChange("ccv", e.target.value)}
+                            onChange={setCcv}
                         />
                     </div>
                     <UiAirneisInputText
@@ -83,10 +99,9 @@ export default function AjoutCarteBanquaire() {
                         placeholder="John Doe"
                         label="Nom de carte"
                         required={true}
-                        value={carte.nom}
-                        onChange={(e) => handleInputChange("nom", e.target.value)}
+                        onChange={setNom}
                     />
-                    <UiAirneisButton type="submit">Ajouter</UiAirneisButton>
+                    <UiAirneisButton>Ajouter</UiAirneisButton>
                 </form>
             </section>
         </main>

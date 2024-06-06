@@ -9,10 +9,10 @@ interface CarteCategorieProps {
 
 export default function CarteCategorie(props: CarteCategorieProps) {
   const {nom, image, id} = {...props.categorie}
-
+  console.log(props.categorie)
   return (
     <Link to={`/categories/${id}`} key={nom} className={styles["carte-categorie"]}>
-      <img src={image} alt="" />
+      <img src={image.url} alt="" />
       <div className={styles["description"]}>
         <h2>{nom}</h2>
       </div>
