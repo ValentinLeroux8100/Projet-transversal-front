@@ -32,7 +32,7 @@ export default function Compte(){
 
             <Link to="commande">
                 <UiAirneisButton className="size-32 items-center" icon={IconeCommande} vertical>
-                    Commande
+                    Commandes
                 </UiAirneisButton>
             </Link>
             </div>

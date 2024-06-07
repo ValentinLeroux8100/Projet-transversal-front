@@ -30,10 +30,11 @@ export default function Acceuil() {
     <main className="gap-8">
       <div className="grid place-content-center w-full h-64 bg-cover bg-center mb-8 bg-hero-pattern">
         <h2 className="text-center font-logo text-primary text-8xl font-semibold font-body capitalize drop-shadow-md">
-          Airness
+          Airneis
         </h2>
       </div>
       <section className="px-12">
+        <h2 className="titre-section">Nos catégories de meubles</h2>
         {!isLoading && <ListeCategories categories={categories} /> }
       </section>
       <section className="px-12">

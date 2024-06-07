@@ -38,7 +38,6 @@ export default function AjoutCarteBanquaire() {
             carteAInserer.ccv = parseInt(ccv)
             carteAInserer.numero = numero
             carteAInserer.nom = nom
-            console.log(carteBanquaireToCarteBanquaireRest(carteAInserer))
             await CarteBanquaireService.add([
                 ...cartes.map(carteEnBase => {
                     carteEnBase.codeSecurite = parseInt(carteEnBase.codeSecurite)

@@ -10,6 +10,7 @@ export default function Connection() {
   const navigate = useNavigate()
 
   const call = async () => {
+
     const token = await utilisateurService.login(email, password);
     if(token)
       navigate("/compte")

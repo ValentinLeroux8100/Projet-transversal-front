@@ -5,6 +5,7 @@ import utilisateurService from "./utilisateur.service";
 
 class PanierService{
     async add(produitId: string, quantite: number){
+        if(!utilisateurService.getToken())return
         return fetch("http://localhost:8080/api/utilisateur/panier?" + new URLSearchParams({
             idArticle: produitId,
             quantite: quantite.toString()

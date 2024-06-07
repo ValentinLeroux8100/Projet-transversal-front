@@ -8,6 +8,7 @@ export default function IconePanier() {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
+    try{
     panierService.get()
     .then(result => {
       setCount(
@@ -16,7 +17,8 @@ export default function IconePanier() {
           0
         )
       )
-    })
+    }).catch(error => console.log(error))
+    }catch(e){console.log("pas vu pas pris")}
   }, [])
 
   return (

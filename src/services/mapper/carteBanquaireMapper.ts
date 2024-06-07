@@ -12,12 +12,15 @@ const carteBanquaireRestToCarteBanquaire = (carteRest) => {
 }
 
 const carteBanquaireToCarteBanquaireRest = (carte) => {
-    return {
+    const output = {
         numeroCarte: carte.numero,
         nomCarte: carte.nom,
         dateExpiration: `${carte.mois}/${carte.annee}`,
         codeSecurite: carte.ccv,
         estParDefaut: false
     }
+    output.dateExpiration = (carte.mois < 10)?`0${carte.mois}/`:`${carte.mois}/`
+    output.dateExpiration += (carte.annee < 10)?`0${carte.annee}`:`${carte.annee}`
+    return output
 }
 export { carteBanquaireRestToCarteBanquaire, carteBanquaireToCarteBanquaireRest }
